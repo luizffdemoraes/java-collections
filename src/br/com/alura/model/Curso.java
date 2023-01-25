@@ -3,6 +3,7 @@ package br.com.alura.model;
 import br.com.alura.model.Aula;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Curso {
@@ -37,6 +38,16 @@ public class Curso {
     }
 
     public List<Aula> getAulas() {
-        return aulas;
+        return Collections.unmodifiableList(aulas);
+    }
+
+    public int getTempoTotal() {
+        return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+    }
+
+    @Override
+    public String toString() {
+        return "[Curso: " + this.getNome() + ", tempo total: " + this.getTempoTotal()
+                + ", aulas: + " + this.aulas + "]";
     }
 }
