@@ -11,6 +11,10 @@ public class TestaAlunos {
 
         //Conjunto
         // O método sort só funciona com List
+        // Vantagens do uso do HashSet
+        // A primeira vantagem é que ele não aceita elementos repetidos.
+        // Mas a grande vantagem de se utilizar o conjunto é a velocidade de performance,
+        // quando utilizamos métodos que procuram objetos dentro de uma coleção (por exemplo, o método contains).
         Set<String> alunos = new HashSet<>();
         alunos.add("Rodrigo Turini");
         alunos.add("Alberto Souza");
