@@ -4,6 +4,8 @@ import br.com.alura.model.Aluno;
 import br.com.alura.model.Aula;
 import br.com.alura.model.Curso;
 
+import java.sql.SQLOutput;
+
 public class TestaCursoComAluno {
 
     public static void main(String[] args) {
@@ -27,5 +29,17 @@ public class TestaCursoComAluno {
         javaColecoes.getAlunos().forEach(aluno -> {
             System.out.println(aluno);
         });
+
+        System.out.println("O aluno " + a1.getNome() + " está matriculado?");
+        System.out.println(javaColecoes.estaMatriculado(a1));
+
+        String alunoProcurado = "Rodrigo Turini";
+        Aluno turini = new Aluno("Rodrigo Turini", 34672);
+        System.out.println("E esse Turini, está matriculado?");
+        System.out.println(javaColecoes.estaMatriculado(turini));
+
+        System.out.println("O a1 é == ao Turini?");
+        System.out.println(a1 == turini);
+        System.out.println(a1.equals(turini));
     }
 }
