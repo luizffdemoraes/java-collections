@@ -5,6 +5,9 @@ import br.com.alura.model.Aula;
 import br.com.alura.model.Curso;
 
 import java.sql.SQLOutput;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.Vector;
 
 public class TestaCursoComAluno {
 
@@ -24,6 +27,22 @@ public class TestaCursoComAluno {
         javaColecoes.matricula(a1);
         javaColecoes.matricula(a2);
         javaColecoes.matricula(a3);
+
+        Set<Aluno> alunos = javaColecoes.getAlunos();
+
+        // Código legado e antigo e comum utilizarem iterator.
+        Iterator<Aluno> iterator = alunos.iterator();
+
+        while(iterator.hasNext()) {
+            Aluno proximoAluno = iterator.next();
+            System.out.println(proximoAluno);
+        }
+
+        Vector<Aluno>  vetor = new Vector<>();
+
+        for (Aluno a : javaColecoes.getAlunos()) {
+            System.out.println(a);
+        }
 
         System.out.println("Todos os alunos matriculados: ");
         javaColecoes.getAlunos().forEach(aluno -> {
